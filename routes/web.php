@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('closet/create', 'Admin\ClosetController@add')->middleware('auth');
+    Route::post('closet/create', 'Admin\ClosetController@create');
     Route::get('clset/edit', 'Admin\closetController@add');
 });
 
