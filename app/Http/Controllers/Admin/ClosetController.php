@@ -51,4 +51,18 @@ class ClosetController extends Controller
     {
         return redirect('admin/closet/edit');
     }
+    
+    //以下を追記
+    public function index(Request $request)
+    {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            //検索されたら検索結果を取得する
+            $posts = Closet::where('title', $cond_title)->get();
+        } else {
+            //それ以外はすべてのニュースを取得する
+            $posts = Closet::all();
+        }
+        return view('admin.closet.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+    }
 }

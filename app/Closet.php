@@ -12,6 +12,6 @@ class Closet extends Model
     public static $rules = array(
         'item' => 'required',
         'category' => 'required',
-        'season' => 'required,'
+        'season' => 'required'
         );
 }
