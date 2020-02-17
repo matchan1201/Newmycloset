@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>所持している服一覧</h2>
+            <h2>所持している服</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">アイテム名</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_title" value="[[ $cond_title }}">
+                            <input type="text" class="form-control" name="cond_title" value="">
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
@@ -26,30 +26,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="list-news col-md-12 mx-auto">
-                <div class="row">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th width="10%">ID</th>
-                                <th width="20%">アイテム名</th>
-                                <th width="35%">カテゴリ</th>
-                                <th width="35%">季節</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($posts as $closet)
-                                <tr>
-                                    <th>{{ $closet->id }}</th>
-                                    <td>{{ \Str::limit($closet->item, 100) }}</tb>
-                                    <td>{{ \Str::limit($closet->category,100) }}</td>
-                                    <td>{{ \Str::limit($closet->season,50) }}</td>
-                                </tr>
-                            @endforeach    
-                        </tbody>
-                    </table>
-                </div>
+        @foreach($posts as $closet)
+        <div class="mx-auto">
+        <div class="card col-xs-4" style="width: 18rem;"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
+            <div class="card-id text-center">{{ $closet->id }}</div>
+            <h5 class="card-item text-center">{{ \Str::limit($closet->item, 100) }}</h5>
+            <img src="{{ asset('storage/image/' . $closet->image_path) }}">
+            <div class="card-body text-center">
+                <p class="card-category">{{ \Str::limit($closet->category,100) }}</p>
+                <p class="card-season">{{ \Str::limit($closet->season,50) }}</p>
+                <div class="text-right">
+                    <a href="{{ action('Admin\ClosetController@edit',['id' => $closet->id]) }}">編集</a>
+            　　</div>
+            　　<div class="text-right">
+            　　    <a href="{{ action('Admin\ClosetController@delete',['id' => $closet->id]) }}">削除</a>
+            　　</div>
             </div>
-        </div>
+                            <!-- このforeach文によって今まで保存したデータを表示している
+                            このデータを上のカードの部分に入れ込むにはどうすればよいのだろうか
+                            ひとつづつにforeach文を入れ込むことがいいのか
+                            けどforeach文は繰り返しのことだから意味がない希ガス -->
+    　　</div> 
+    　　</div>
+            @endforeach
+        </div>    
     </div>
-@endforeach    
+@endsection  

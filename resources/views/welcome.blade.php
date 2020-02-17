@@ -35,9 +35,17 @@
             }
 
             .top-right {
+                width: 100%;
+                padding: 15px 0;
                 position: absolute;
                 right: 10px;
                 top: 18px;
+            }
+            .top-right li {
+                float: right;
+                padding: 0 30px;
+                text-align: center;
+                list-style-type: none;
             }
 
             .content {
@@ -67,8 +75,13 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <li><a class= "nav-link" href="#">新規会員登録</a></li>
+                            <li><a class= "nav-link" href="#">ログイン</a></li>
+                            <li><a class= "nav-link" href="#">自己紹介</a></li>
+                            <li><a class= "nav-link" href="#">MyClosetとは</a></li>
+                            <li><a class= "nav-link" href="#">ホーム</a></li>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">MyCloset</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,7 +94,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Myclosetとは...
                 </div>
 
                 <div class="links">

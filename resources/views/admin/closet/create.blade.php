@@ -2,13 +2,13 @@
 @extends('layouts.admin')
 
 {{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title','my closet')
+@section('title','服登録画面')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-12 mx-auto">
                 <h2>あなたの持っている服</h2>
                 <form action="{{ action('Admin\ClosetController@create') }}"method="post" enctype="multipart/form-data">
                     
@@ -22,54 +22,69 @@
                     
                     <div class="form-group row">
                         <label class="col-md-2">アイテム名</label>
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <input type="text" class="form-control" name="item" value="{{ old('item') }}">
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-2">カテゴリ</label>
-                        <div class="col-md-10">
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">アクセサリー
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="アクセサリー">アクセサリー
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">アウター
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="アウター">アウター
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">トップス
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="トップス">トップス
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">ボトムス
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="ボトムス">ボトムス
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">ソックス
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="ソックス">ソックス
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="category" value="{{ old('category') }}">シューズ
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label>    
+                                <input class="form-check-input" type="checkbox" name="category" value="シューズ">シューズ
                             </label>
                         </div>
                     </div>
-                    
                     <div class="form-group row">
                         <label class="col-md-2">季節</label>
-                        <div class="col-md-10">
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="season" value="{{ old('season') }}">春
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="season" value="{{ old('season') }}">夏
-                            </label>
-                            <label class="radio-inline">
-                        　　　　<input type="radio" class="form-control" name="season" value="{{ old('season') }}">秋
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" class="form-control" name="season" value="{{ old('season') }}">冬
+                        <div class="form-check form-check-inline">
+                            <label>
+                                <input class="form-check-input" type="checkbox" name="season" value="春">春
                             </label>
                         </div>
+                        <div class="form-check form-check-inline">
+                            <label>
+                                <input class="form-check-input" type="checkbox" name="season" value="夏">夏
+                            </label>
+                        </div> 
+                        <div class="form-check form-check-inline">
+                            <label>
+                                <input class="form-check-input" type="checkbox" name="season" value="秋">秋
+                            </label>
+                        </div> 
+                        <div class="form-check form-check-inline">
+                            <label>
+                                <input class="form-check-input" type="checkbox" name="season" value="冬">冬
+                            </label>
+                        </div> 
                     </div>
-                    
                     <div class="form-group row">
+                        <br>
                         <label class="col-md-2">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">

@@ -13,7 +13,7 @@ class CreateClosetTable extends Migration
      */
     public function up()
     {
-        Schema::create('closet', function (Blueprint $table) {
+        Schema::create('closets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('item');//アイテム名を保存するカラム
             $table->string('category');//服の種類を選択するカラム
@@ -31,6 +31,6 @@ class CreateClosetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('closet');
+        Schema::dropIfExists('closets');
     }
 }

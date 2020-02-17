@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace mycloset;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,4 +14,9 @@ class Closet extends Model
         'category' => 'required',
         'season' => 'required'
         );
+        
+        public function histories()
+        {
+            return $this->hasMany('mycloset\History');
+        }
 }

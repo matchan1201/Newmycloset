@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace mycloset\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

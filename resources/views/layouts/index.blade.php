@@ -66,20 +66,46 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">ログアウト</a>
+                            <a class="nav-link" href="#">ログアウト</a>
                         </li>
                     </ul>
                 </div>
             </nav>
+        </div>    
             {{-- ここまでナビゲーションバー　--}}
             
             <main class="py-4">
-                {{-- コンテンツをここ入れるため、@yieldで空けておきます --}}
-                @yield('content')
+                <div class="container">
+                    <div class="row">
+                        <h2>@yield('category')</h2>
+                    </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            <a href="{{ action('Admin\ClosetController@add') }}" role="button" class="btn btn-primary">新規登録</a>
+                            </div>
+                            <div class="col-md-8">
+                                <form acrtion="{{ action('Admin\ClosetController@index') }}" method="get">
+                                    <div class="form-group row">
+                                        <label class="col-md-2">アイテム名</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="cond_title" value="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                {{ csrf_field() }}
+                                                <input type="submit" class="btn btn-primary" value="検索">
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{-- ここまでがテンプレート --}}
+                        
+                        {{-- ここから、カテゴリと季節ごとに作っていく --}}
+                        @yield('content')
+                </div>   
             </main>
             <footer>
                 <p class="copyright">2020 mycloset</p>
             </footer>
-        </div>
     </body>
 </html>
