@@ -24,7 +24,8 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/mycloset.css') }}" rel="stylesheet">
-    </head>
+        
+  </head>
     <body>
         <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-primary mt-3 mb-3">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +55,7 @@
             </div>
         </nav>
             <div class="main">
-                <div class="container-xl-4">
+                <div class="main col-12 mx-auto">
                     <div class="card-contents w-100" style="background-color: #fff;">
                         <h1 id="closet">myclosetとは...</h1>
                         <p>自分のクローゼットの服の数を記録するサービスです</p>
@@ -71,11 +72,11 @@
                         <h1 id="contents">コンテンツ</h1>
                         <div class="row">
                             <div class="contents-right col-6">
-                                <h3><a class="contents-link" href="#">ブログ</a></h3>
+                                <h3><a class="contents-link" href="#" target="_blank" rel="noopener noreferrer">ブログ</a></h3>
                                 <p>ブログやってます</p>
                             </div>
                             <div class="contents-left col-6">
-                                <h3><a class="contents-link" href="#">ツイッター</a></h3>
+                                <h3><a class="contents-link" href="#" target="_blank" rel="noopener noreferrer">ツイッター</a></h3>
                                 <p>twitterやってます</p>
                             </div>
                         </div>
@@ -83,7 +84,9 @@
                 </div>
             </div>
             <footer>
-                <p class="copyright">2020 mycloset</p>
+                <div class="row">
+                <p class="copyright mx-auto">2020 mycloset</p>
+                </div>
             </footer>
     </body>
 </html>

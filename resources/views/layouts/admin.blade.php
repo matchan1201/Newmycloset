@@ -66,7 +66,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">ログアウト</a>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                ログアウト
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                            </form>
                         </li>
                     </ul>
                 </div>

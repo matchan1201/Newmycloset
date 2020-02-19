@@ -30,11 +30,11 @@
         <div class="mx-auto">
         <div class="card col-xs-4" style="width: 18rem;"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
             <div class="card-id text-center">{{ $closet->id }}</div>
-            <h5 class="card-item text-center">{{ \Str::limit($closet->item, 100) }}</h5>
+            <h5 class="card-item text-center">{{ $closet->item }}</h5>
             <img src="{{ asset('storage/image/' . $closet->image_path) }}">
             <div class="card-body text-center">
-                <p class="card-category">{{ \Str::limit($closet->category,100) }}</p>
-                <p class="card-season">{{ \Str::limit($closet->season,50) }}</p>
+                <p class="card-category">{{ $closet->category }}</p>
+                <p class="card-season">{{ $closet->season }}</p>
                 <div class="text-right">
                     <a href="{{ action('Admin\ClosetController@edit',['id' => $closet->id]) }}">編集</a>
             　　</div>
