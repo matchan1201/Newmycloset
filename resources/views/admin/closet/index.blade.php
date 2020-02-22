@@ -27,11 +27,12 @@
         </div>
         <div class="row">
         @foreach($posts as $closet)
-        <div class="mx-auto">
-        <div class="card col-xs-4" style="width: 18rem;"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
+        <div class="card col-xs-2 mx-auto" style="width: 18rem;"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
             <div class="card-id text-center">{{ $closet->id }}</div>
             <h5 class="card-item text-center">{{ $closet->item }}</h5>
+            @if ($closet->image_path)
             <img src="{{ asset('storage/image/' . $closet->image_path) }}">
+            @endif
             <div class="card-body text-center">
                 <p class="card-category">{{ $closet->category }}</p>
                 <p class="card-season">{{ $closet->season }}</p>
@@ -46,9 +47,8 @@
                             このデータを上のカードの部分に入れ込むにはどうすればよいのだろうか
                             ひとつづつにforeach文を入れ込むことがいいのか
                             けどforeach文は繰り返しのことだから意味がない希ガス -->
-    　　</div> 
     　　</div>
             @endforeach
-        </div>    
+        </div>
     </div>
-@endsection  
+@endsection

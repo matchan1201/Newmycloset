@@ -24,6 +24,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('css/mycloset.css') }}" rel="stylesheet">
+        {{-- ツイッターとブログの図を導入するFont Awesome--}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
   </head>
     <body>
@@ -72,11 +74,13 @@
                         <h1 id="contents">コンテンツ</h1>
                         <div class="row">
                             <div class="contents-right col-6">
-                                <h3><a class="contents-link" href="#" target="_blank" rel="noopener noreferrer">ブログ</a></h3>
+                                <a class="contents-link" href="https://matsugramming.com/" target="_blank" rel="noopener noreferrer"><i class="fas fa-blog fa-5x"></i></a>
+                                <h3>blog</h3>
                                 <p>ブログやってます</p>
                             </div>
                             <div class="contents-left col-6">
-                                <h3><a class="contents-link" href="#" target="_blank" rel="noopener noreferrer">ツイッター</a></h3>
+                                <a class="contents-link" href="https://twitter.com/matsumatsu1201" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter-square fa-5x"></i></a>
+                                <h3>twitter</h3>
                                 <p>twitterやってます</p>
                             </div>
                         </div>
