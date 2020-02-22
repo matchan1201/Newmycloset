@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -35,7 +35,7 @@
                         <a class="nav-link" href="{{ route('register') }}">新規会員登録</a>
                     </li>
                 </ul>
-                
+
                 <!--わかっていないから保留 -->
                 <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     < Left Side Of Navbar -->
@@ -73,7 +73,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest 
+                        @endguest
                     </ul>
                 </div> -->
             </div>

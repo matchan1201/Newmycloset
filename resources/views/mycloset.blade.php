@@ -14,17 +14,17 @@
 
         <!-- Scripts -->
          {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
-        <script src="{{ secure_asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込みます --}}
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
-        <link href="{{ secure_asset('css/mycloset.css') }}" rel="stylesheet">
-        
+        <link href="{{ asset('css/mycloset.css') }}" rel="stylesheet">
+
   </head>
     <body>
         <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-primary mt-3 mb-3">
@@ -51,7 +51,7 @@
                         </li>
                             <a class= "nav-link" href="{{ url('register') }}">新規会員登録</a>
                         </li>
-            </ul>            
+            </ul>
             </div>
         </nav>
             <div class="main">
