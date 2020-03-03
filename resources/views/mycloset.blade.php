@@ -33,8 +33,8 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-        　　<a class="navbar-brand" href="{{ url('') }}">{{ config('app.name') }}</a>
-        　　<div class="collapse navbar-collapse justify-content-end">
+        　　<a class="navbar-brand mx-auto" href="{{ url('') }}">{{ config('app.name') }}</a>
+        　　<div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
         　　 <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class= "nav-link" href="{{ url('') }}">ホーム</a>
@@ -57,7 +57,7 @@
             </div>
         </nav>
             <div class="main">
-                <div class="main col-12 mx-auto">
+                <div class="main col-sm-12 mx-auto">
                     <div class="card-contents w-100" style="background-color: #fff;">
                         <h1 id="closet">myclosetとは...</h1>
                         <p>自分のクローゼットの服の数を記録するサービスです</p>

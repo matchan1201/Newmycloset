@@ -21,10 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary mt-3 mb-3">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="navbar navbar-expand col-sm-12 navbar-dark bg-primary mt-3 mb-3">
             <a class="navbar-brand" href="{{ url ('') }}">{{ config('app.name') }}</a>
         　　<div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
