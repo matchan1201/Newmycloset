@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use mycloset\Http\Controllers\Controller;
 use mycloset\Closet;
 use mycloset\History;
+use mycloset\User;
 use Carbon\Carbon;
 
 class ClosetController extends Controller
@@ -93,8 +94,10 @@ class ClosetController extends Controller
             //検索されたら検索結果を取得する
             $posts = Closet::where('item','LIKE', "%{$cond_title}%")->get();
         } else {
-            //それ以外はすべてのニュースを取得する
+            //それ以外はすべての投稿を取得する
             $posts = Closet::all();
+            //そこから各ユーザーの投稿したものだけ取得する
+            $result = array_filter($posts,)
         }
         return view('admin.closet.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
