@@ -7,6 +7,7 @@ use mycloset\Closet;
 use mycloset\History;
 use mycloset\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;//これによって認証済みユーザーへ簡単にアクセスできる。
 
 class ClosetController extends Controller
 {
@@ -40,6 +41,8 @@ class ClosetController extends Controller
 
         //データベースに保存する
         $closet->fill($form);
+        //ユーザーと紐づける。その保存したデータにユーザーIDを取得する
+        $closet->user_id = Auth::id();//$closetからuser_idを取り出してAuth::idに代入する
         $closet->save();
 
         return redirect('admin/closet/create');
@@ -92,12 +95,18 @@ class ClosetController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             //検索されたら検索結果を取得する
-            $posts = Closet::where('item','LIKE', "%{$cond_title}%")->get();
+            $user = Auth::user();
+            $posts = Closet::where('user_id',$user->id)
+               ->where(function ($query) {
+                   $query
+                       ->where('item','LIKE', "%{$cond_title}%");
+               })
+               ->get();
         } else {
-            //それ以外はすべての投稿を取得する
-            $posts = Closet::all();
-            //そこから各ユーザーの投稿したものだけ取得する
-            $result = array_filter($posts,)
+            //ユーザー情報を取得した。ここから紐づけたユーザーの登録した服を表示するには
+            $posts = Auth::user()//=は代入演算子で$postsにユーザが登録した服情報を代入した。
+                ->closets;//ここが複数形なのはClosetモデルを取得するため
+                //->を使って$postsからClosetモデルを取り出している
         }
         return view('admin.closet.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }

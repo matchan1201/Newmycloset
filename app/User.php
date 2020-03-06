@@ -36,4 +36,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function closets(){
+      return $this->hasMany('mycloset\Closet');//ユーザは一人に服はたくさん
+    }
 }

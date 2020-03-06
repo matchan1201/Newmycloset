@@ -25,32 +25,32 @@
                 </form>
             </div>
         </div>
-        <div class="row">
-        @foreach($posts as $closet)
-        <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="mx-auto"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
-            <div class="card-id text-center">{{ $closet->id }}</div>
+      <div class="row">
+      @foreach($posts as $closet)
+       <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4">
+         <div class="mx-auto"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
+          <div class="card-id text-center">{{ $closet->id }}</div>
             <h5 class="card-item text-center">{{ $closet->item }}</h5>
-            @if ($closet->image_path)
+          @if ($closet->image_path)
             <img src="{{ asset('storage/image/' . $closet->image_path) }}" class="img-fluid" alt="max-width:100%">
-            @endif
+          @endif
             <div class="card-body text-center">
                 <p class="card-category">{{ $closet->category }}</p>
                 <p class="card-season">{{ $closet->season }}</p>
                 <div class="text-right">
                     <a href="{{ action('Admin\ClosetController@edit',['id' => $closet->id]) }}">編集</a>
-            　　</div>
-            　　<div class="text-right">
-            　　    <a href="{{ action('Admin\ClosetController@delete',['id' => $closet->id]) }}">削除</a>
-            　　</div>
+                </div>
+                 <div class="text-right">
+                    <a href="{{ action('Admin\ClosetController@delete',['id' => $closet->id]) }}">削除</a>
+                </div>
             </div>
                             <!-- このforeach文によって今まで保存したデータを表示している
                             このデータを上のカードの部分に入れ込むにはどうすればよいのだろうか
                             ひとつづつにforeach文を入れ込むことがいいのか
                             けどforeach文は繰り返しのことだから意味がない希ガス -->
-    　　</div>
+         </div>
+       </div>
+      @endforeach
       </div>
-            @endforeach
-        </div>
     </div>
 @endsection

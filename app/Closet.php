@@ -20,8 +20,8 @@ class Closet extends Model
       return $this->hasMany('mycloset\History');
     }
     //ユーザーモデルと関連付けを行う
-    public function users ()
+    public function user()
     {
-      return $this->hasMany('mycloset\User');
+      return $this->belongsTo('mycloset\User');//服に対してユーザーは複数
     }
 }

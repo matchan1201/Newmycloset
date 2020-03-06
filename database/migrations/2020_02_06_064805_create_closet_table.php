@@ -19,7 +19,8 @@ class CreateClosetTable extends Migration
             $table->string('category');//服の種類を選択するカラム
             $table->string('season');//季節を保存するカラム
             $table->string('image_path')->nullable();//画像のパスを保存するカラム
-            
+            $table->integer('user_id');//ユーザーIDを保存するカラム
+
             $table->timestamps();
         });
     }

@@ -11,51 +11,49 @@
             <div class="col-md-12 mx-auto">
                 <h2>あなたの持っている服</h2>
                 <form action="{{ action('Admin\ClosetController@create') }}"method="post" enctype="multipart/form-data">
-                    
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
                                 <li>{{ $e }}</li>
-                            @endforeach    
+                            @endforeach
                         </ul>
                     @endif
-                    
                     <div class="form-group row">
                         <label class="col-md-2">アイテム名</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="item" value="{{ old('item') }}">
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <label class="col-md-2">カテゴリ</label>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="アクセサリー">アクセサリー
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="アウター">アウター
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="トップス">トップス
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="ボトムス">ボトムス
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="ソックス">ソックス
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label>    
+                            <label>
                                 <input class="form-check-input" type="checkbox" name="category" value="シューズ">シューズ
                             </label>
                         </div>
@@ -71,17 +69,17 @@
                             <label>
                                 <input class="form-check-input" type="checkbox" name="season" value="夏">夏
                             </label>
-                        </div> 
+                        </div>
                         <div class="form-check form-check-inline">
                             <label>
                                 <input class="form-check-input" type="checkbox" name="season" value="秋">秋
                             </label>
-                        </div> 
+                        </div>
                         <div class="form-check form-check-inline">
                             <label>
                                 <input class="form-check-input" type="checkbox" name="season" value="冬">冬
                             </label>
-                        </div> 
+                        </div>
                     </div>
                     <div class="form-group row">
                         <br>
@@ -96,4 +94,4 @@
             </div>
         </div>
     </div>
-@endsection    
+@endsection

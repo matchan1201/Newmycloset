@@ -29,7 +29,7 @@
     <body>
         <div id="app">
             <nav class="navbar navbar-expand col-sm-12 navbar-dark bg-primary mt-3 mb-3">
-                <a class="navbar-brand" href="{{ action('Admin\ClosetController@index') }}">mycloset</a>
+                <a class="navbar-brand" href="{{ action('Admin\ClosetController@index') }}">SmartTansu</a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
