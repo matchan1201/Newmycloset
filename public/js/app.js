@@ -49683,10 +49683,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/matchan/techboost/mycloset/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/matchan/techboost/mycloset/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /home/matchan/techboost/mycloset/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /home/matchan/techboost/mycloset/resources/sass/mycloset.scss */"./resources/sass/mycloset.scss");
+__webpack_require__(/*! /home/matchan/techboost/SmartTansu/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/matchan/techboost/SmartTansu/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/matchan/techboost/SmartTansu/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /home/matchan/techboost/SmartTansu/resources/sass/mycloset.scss */"./resources/sass/mycloset.scss");
 
 
 /***/ })

@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'My Closetの一覧')
+@section('title', 'Tansu一覧')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>所持している服</h2>
+            <h2>タンスの中の服</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
