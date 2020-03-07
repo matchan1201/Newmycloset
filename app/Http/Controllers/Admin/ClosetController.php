@@ -8,6 +8,7 @@ use mycloset\History;
 use mycloset\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;//これによって認証済みユーザーへ簡単にアクセスできる。
+use Storage;
 
 class ClosetController extends Controller
 {
@@ -28,8 +29,8 @@ class ClosetController extends Controller
 
         // フォームから画像が送られてきたら、保存して$closet->image_pathに画像のパスを保存する
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $closet->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $closet->image_path = Storage::disk('s3')->url($path);
         } else {
             $closet->image_path = null;
         }
@@ -70,8 +71,8 @@ class ClosetController extends Controller
         if ($request->remove == 'true') {
             $closet_form['image_path'] = null;
         } elseif ($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
-            $closet_form['image_path'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $closet->image_path = Storage::disk('s3')->url($path);
         } else {
             $closet_form['image_path'] = $closet->image_path;
         }

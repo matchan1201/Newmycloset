@@ -31,7 +31,7 @@
          <div class="mx-auto"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
             <h5 class="card-item text-center">{{ $closet->item }}</h5>
           @if ($closet->image_path)
-            <img src="{{ asset('storage/image/' . $closet->image_path) }}" class="img-fluid" alt="max-width:100%">
+            <img src="{{ $closet->image_path }}" class="img-fluid" alt="max-width:100%">
           @endif
             <div class="card-body text-center">
                 <p class="card-category">{{ $closet->category }}</p>
