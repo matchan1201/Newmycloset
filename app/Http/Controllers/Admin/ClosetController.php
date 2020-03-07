@@ -95,11 +95,12 @@ class ClosetController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             //検索されたら検索結果を取得する
-            $user = Auth::user();
-            $posts = Closet::where('user_id',$user->id)
-               ->where(function ($query) {
+            $user = Auth::user();//userの情報を$userに代入する
+            $posts = Closet::where('user_id',$user->id)//Closetモデルから登録された服を取り出してuser_idと紐付ける
+               ->where(function ($query) use ($cond_title ) {//query関数を使うことで選択した範囲の情報を出力する。
+                                                             //useを使い変数$cond_titleを扱えるようにする
                    $query
-                       ->where('item','LIKE', "%{$cond_title}%");
+                       ->where('item','LIKE', "%{$cond_title}%");//itemを検索する
                })
                ->get();
         } else {

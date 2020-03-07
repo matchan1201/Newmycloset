@@ -29,7 +29,6 @@
       @foreach($posts as $closet)
        <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4">
          <div class="mx-auto"> <!--mx-autoを入れたら小さい画面でも2カラムになったけどなんでかわからない。 -->
-          <div class="card-id text-center">{{ $closet->id }}</div>
             <h5 class="card-item text-center">{{ $closet->item }}</h5>
           @if ($closet->image_path)
             <img src="{{ asset('storage/image/' . $closet->image_path) }}" class="img-fluid" alt="max-width:100%">
