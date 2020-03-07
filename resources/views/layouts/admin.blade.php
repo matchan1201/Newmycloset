@@ -58,7 +58,7 @@
                 @yield('content')
             </main>
             <footer>
-                <p class="copyright">2020 mycloset</p>
+                <p class="copyright">2020 SmartTansu</p>
             </footer>
         </div>
     </body>

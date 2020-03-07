@@ -40,7 +40,7 @@
                   <a class= "nav-link" href="{{ url('') }}">ホーム</a>
               </li>
               <li>
-                  <a class= "nav-link" href="#closet">MyClosetとは</a>
+                  <a class= "nav-link" href="#closet">SmartTansuとは</a>
               </li>
               <li>
                   <a class= "nav-link" href="#introduction">自己紹介</a>
@@ -59,7 +59,7 @@
           <div class="main">
               <div class="main col-sm-12 mx-auto">
                   <div class="card-contents w-100" style="background-color: #fff;">
-                      <h1 id="closet">myclosetとは...</h1>
+                      <h1 id="closet">SmartTansuとは...</h1>
                       <p>自分のクローゼットの服の数を記録するサービスです</p>
                   </div>
                   <div class="card-contents w-100" style="background-color: #fff;">
@@ -89,7 +89,7 @@
           </div>
           <footer>
             <div class="row">
-              <p class="copyright mx-auto">2020 mycloset</p>
+              <p class="copyright mx-auto">2020 SmartTansu</p>
             </div>
           </footer>
     </body>
